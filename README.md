@@ -2,6 +2,8 @@
 
 A modern Terminal User Interface (TUI) application for tracking personal expenses and budgeting, built with Python and Textual.
 
+![Dashboard Screenshot](public/screenshots/dashboard.png)
+
 ## ✨ Features
 
 - 📊 **Intuitive TUI Interface** - Modern, responsive terminal-based UI
