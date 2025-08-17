@@ -1,0 +1,367 @@
+/* Budgt.sh TCSS Styles */
+/* Theme-aware styling - respects Textual theme changes */
+
+/* Global styling - uses theme colors */
+Screen {
+    background: $background;
+}
+
+/* Horizontal layout */
+#main-horizontal {
+    height: 1fr;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.grid-panel {
+    background: $surface;
+    border: round transparent;
+    padding: 0;
+    margin: 0;
+    width: 1fr;
+    height: 1fr;
+}
+
+.grid-panel:focus-within {
+    border: round $accent;
+}
+
+/* Panel sizing - accounts 30%, transactions 70% */
+#accounts-panel {
+    width: 3fr;
+    height: 1fr;
+    min-width: 20%;
+    max-width: 50%;
+}
+
+#transactions-panel {
+    width: 7fr;
+    height: 1fr;
+    min-width: 50%;
+    max-width: 80%;
+}
+
+
+
+/* Navigation bar */
+#nav-bar {
+    height: 1;
+    padding: 0;
+    background: $background;
+    border-bottom: solid $primary;
+}
+
+.nav-item {
+    margin-right: 1;
+    text-style: bold;
+    color: $text;
+    background: $surface;
+    padding: 0;
+}
+
+.nav-item:hover {
+    color: $primary;
+    background: $surface-lighten-1;
+}
+
+/* Panel headers */
+.panel-header {
+    text-style: bold;
+    color: $primary;
+    padding: 0;
+    border-bottom: none;
+    margin: 0;
+    background: $surface-lighten-1;
+    text-align: center;
+    height: 1;
+}
+
+.panel-header:hover {
+    color: $accent;
+}
+
+/* Data tables */
+#accounts-table {
+    height: 1fr;
+    min-height: 2;
+    max-height: 6;
+    background: $background;
+    border: round transparent;
+    margin: 0;
+    padding: 0;
+}
+
+#transactions-table {
+    height: 1fr;
+    min-height: 8;
+    background: $background;
+    border: round transparent;
+    margin: 0;
+    padding: 0;
+}
+
+#accounts-table:focus, #transactions-table:focus {
+    border: round $accent;
+}
+
+/* Table headers */
+DataTable > .datatable--header {
+    text-style: bold;
+    color: $primary;
+    background: $surface-lighten-1;
+}
+
+/* Table cursor/selection */
+DataTable > .datatable--cursor {
+    background: $primary;
+    color: $background;
+}
+
+/* Full-width insights panel */
+.insights-panel-full {
+    background: $surface;
+    border: round $accent;
+    padding: 0;
+    margin: 0 1;
+    height: 22;
+    max-height: 22;
+    min-height: 22;
+}
+
+/* Insights section */
+.insights-title {
+    text-style: bold;
+    color: $accent;
+    border-bottom: solid $primary;
+    margin: 0;
+    padding: 0 1;
+    text-align: center;
+    background: $surface-lighten-1;
+    height: 1;
+}
+
+.insights-display {
+    color: $text;
+    background: $surface-darken-1;
+    padding: 1;
+    border: none;
+    margin: 0;
+    height: 20;
+    max-height: 20;
+    overflow: hidden;
+    scrollbar-size: 1 1;
+}
+
+/* Status indicators */
+#income-summary {
+    color: $success;
+    text-style: bold;
+    margin: 1 0;
+    background: $surface-darken-1;
+    padding: 0 1;
+}
+
+#expense-summary {
+    color: $error;
+    text-style: bold;
+    margin: 1 0;
+    background: $surface-darken-1;
+    padding: 0 1;
+}
+
+/* Footer styling */
+Footer {
+    background: $surface;
+    color: $text;
+}
+
+/* Header styling */
+Header {
+    background: $surface;
+    color: $text;
+}
+
+/* Button styling */
+Button {
+    text-style: bold;
+    margin: 0 1;
+}
+
+Button.-primary {
+    background: $primary;
+    color: $background;
+    border: none;
+}
+
+Button.-primary:hover {
+    background: $accent;
+}
+
+Button.-default {
+    background: $surface-lighten-1;
+    color: $text;
+    border: solid $primary;
+}
+
+Button.-default:hover {
+    background: $surface-lighten-2;
+    border: solid $accent;
+}
+
+/* Modal styling - Proper popup style */
+ModalScreen {
+    background: rgba(0, 0, 0, 0.7);
+    align: center middle;
+}
+
+#dialog {
+    background: $surface;
+    border: round $primary;
+    width: 50;
+    height: auto;
+    max-height: 36;
+    max-width: 60;
+    min-width: 40;
+    padding: 1;
+    margin: 2;
+    box-sizing: border-box;
+}
+
+/* Specific styling for account creation dialog */
+#dialog.account-dialog {
+    width: 45;
+    max-height: 25;
+    max-width: 55;
+    min-width: 35;
+}
+
+#title {
+    text-style: bold;
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1;
+    background: transparent;
+    padding: 0;
+}
+
+#button-row {
+    margin-top: 0;
+    padding-top: 1;
+    align: center middle;
+}
+
+#button-row Button {
+    margin: 0 1;
+    min-width: 16;
+    width: 16;
+}
+
+/* Modal form styling */
+.modal-form {
+    padding: 0;
+    height: auto;
+}
+
+.modal-form Label {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $success;
+    text-style: bold;
+    height: 1;
+}
+
+.modal-form Input, .modal-form Select {
+    margin-bottom: 0;
+    width: 100%;
+    height: 5;
+}
+
+/* Smaller height for amount and description inputs */
+.modal-form Input#amount, .modal-form Input#starting-balance, .modal-form Input#transfer-amount {
+    height: 3;
+}
+
+.modal-form Input#description, .modal-form Input#account-name, .modal-form Input#transfer-description {
+    height: 3;
+}
+
+.modal-form Input:focus, .modal-form Select:focus {
+    border: round $accent;
+}
+
+/* Select dropdown styling */
+Select {
+    border: round $surface-lighten-1;
+    background: $background;
+    color: $text;
+}
+
+Select:focus {
+    border: round $primary;
+}
+
+Select > .select--overlay {
+    background: $surface;
+    border: round $primary;
+}
+
+/* Select value display */
+Select > .select--value {
+    background: $background;
+    color: $text;
+    padding: 0 1;
+    text-style: bold;
+}
+
+/* Select button area */
+Select > .select--button {
+    background: $surface;
+    color: $text;
+}
+
+/* Force text visibility in modal forms */
+.modal-form Select > .select--value {
+    background: $surface-lighten-1;
+    color: $primary;
+    text-style: bold;
+}
+
+/* Ensure dropdown items are visible */
+Select OptionList {
+    background: $surface;
+    color: $text;
+}
+
+Select OptionList > .option-list--option {
+    background: $surface;
+    color: $text;
+}
+
+Select OptionList > .option-list--option-highlighted {
+    background: $primary;
+    color: $background;
+}
+
+/* Enhanced popup dialog styling */
+#dialog {
+    border-subtitle-color: $surface-lighten-1;
+    border-subtitle-style: italic;
+}
+
+/* Input styling */
+Input {
+    border: round $surface-lighten-1;
+    background: $background;
+    color: $text;
+}
+
+Input:focus {
+    border: round $primary;
+}
+
+/* Label styling */
+Label {
+    text-style: bold;
+    color: $text;
+}
